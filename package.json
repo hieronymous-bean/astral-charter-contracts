@@ -5,7 +5,7 @@
   "author": "Jeffrey Brown",
   "license": "ISC",
   "scripts": {
-      "build-achievements": "cd astral-charter-achievements && bash build.sh && cd ../..",
-      "deploy-achievements": "near deploy --wasmFile astral-charter-achievements/out/main.wasm --accountId development-jeffreybrown.testnet"
+    "build": "cargo build --target wasm32-unknown-unknown --release",
+    "postbuild": "mkdir res && cp target/wasm32-unknown-unknown/release/astral_charter_contracts.wasm ./res/"
   }
 }
