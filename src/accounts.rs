@@ -18,12 +18,14 @@ impl Default for Accounts {
 
 #[near_bindgen]
 impl Accounts {
-  pub fn set_status(&mut self, message: String) {
+
+  pub fn set_account_details(&mut self, email: String) {
     let account_id = env::signer_account_id();
-    self.accounts.insert(&account_id, &message);
+    self.accounts.insert(&account_id, &email);
   }
 
-  pub fn get_status(&self, account_id: String) -> Option<String> {
+  pub fn get_account(&self, account_id: String) -> Option<String> {
     return self.accounts.get(&account_id);
   }
+
 }

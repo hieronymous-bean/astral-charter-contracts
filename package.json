@@ -6,6 +6,6 @@
   "license": "ISC",
   "scripts": {
     "build": "cargo build --target wasm32-unknown-unknown --release",
-    "postbuild": "mkdir res && cp target/wasm32-unknown-unknown/release/astral_charter_contracts.wasm ./res/"
+    "postbuild": "cp target/wasm32-unknown-unknown/release/astral_charter_contracts.wasm ./res/"
   }
 }
