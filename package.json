@@ -6,6 +6,8 @@
   "license": "ISC",
   "scripts": {
     "build": "cargo build --target wasm32-unknown-unknown --release",
-    "postbuild": "cp target/wasm32-unknown-unknown/release/astral_charter_contracts.wasm ./res/"
+    "postbuild": "cp target/wasm32-unknown-unknown/release/astral_charter_contracts.wasm ./res/",
+    "deploy": "near deploy --wasmFile res/astral_charter_contracts.wasm --accountId development-jeffreybrown.testnet",
+    "call": "near call development-jeffreybrown.testnet get_account"
   }
 }
